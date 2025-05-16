@@ -46,6 +46,6 @@ SC07B::Send "{vk1D}" ;; 無変換
 ;  Send "{Esc}"
 ;}
 
-SC079 & Tab::Send "+{Tab}"
+;SC079 & Tab::Send "+{Tab}"
 ;SC079 & z::Send "+^{Tab}"
 ;SC079 & x::Send "^{Tab}"

@@ -16,22 +16,18 @@
 >#j:: winTile("a", "b", 1, .5)
 
 ;;;; 1/4
->#a:: winTile("l", "t", .5, .5)
->#s:: winTile("r", "t", .5, .5)
->#z:: winTile("l", "b", .5, .5)
->#x:: winTile("r", "b", .5, .5)
+>#i:: winTile("l", "t", .5, .5)
+>#o:: winTile("r", "t", .5, .5)
+>#,:: winTile("l", "b", .5, .5)
+>#.:: winTile("r", "b", .5, .5)
 
-;;;; 7:3
->#1:: winTile("l", "a", .70, 1)
->#2:: winTile("r", "a", .70, 1)
->#3:: winTile("l", "a", .30, 1)
->#4:: winTile("r", "a", .30, 1)
+;;;; 6.5:3.5
+>#!y:: winTile("l", "a", .65, 1)
+>#!u:: winTile("r", "a", .35, 1)
+>#y:: winTile("l", "a", .35, 1)
+>#u:: winTile("r", "a", .65, 1)
 
 ;;;; 1/3 縦
 >#8:: winTile("a", "t", 1, .33)
 >#9:: winTile("a", "c", 1, .33)
 >#0:: winTile("a", "b", 1, .33)
-
-;;;; モニター間移動
->#]:: Send "+#{Right}"
->#[:: Send "+#{Left}"

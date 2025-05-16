@@ -5,13 +5,20 @@
 ; <     Use the left key of the pair.
 ; >     Use the right key of the pair.
 
-;;;; Window Control by Right+Win
+;;;; 最大化/最小化
 RAlt & m:: WinMaximize
 RAlt & h:: WinMinimize
+;;;; アプリ切り替え
 RAlt & j:: AltTab
 RAlt & k:: ShiftAltTab
-RAlt:: Send "{Escape}"
+;;;; モニター移動
+RAlt & ]:: Send("+#{Right}")
+RAlt & [:: Send("+#{Left}")
 
-;;;; explorer/msedge/outlook/mintty 以外は閉じる
+RAlt:: Send("{Escape}")
+
+;;;; モニター移動
+>#[::+#Left
+>#]::+#Right
+
 #q:: Send "!{F4}"
-
