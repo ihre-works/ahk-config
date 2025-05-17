@@ -40,12 +40,3 @@ SC079 & p::Send "{Blind}{NumpadAdd}"
 ;;;;
 SC079::Send "{vk1C}" ;; 変換
 SC07B::Send "{vk1D}" ;; 無変換
-
-;SC07B:: {               ;; 無変換 を押したら Esc も押したことにする
-;  Send "{vk1Dsc07B}"
-;  Send "{Esc}"
-;}
-
-;SC079 & Tab::Send "+{Tab}"
-;SC079 & z::Send "+^{Tab}"
-;SC079 & x::Send "^{Tab}"
