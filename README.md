@@ -9,69 +9,73 @@
 
 ## 設定方法(HHKB-JP)
 
-- (HHKB) 左Fn -> 左Ctrl / Contrl -> Caps になるようにディップスイッチで設定
-- リソースを変更して次のようにマッピング
+- (HHKB-JP) 左Fn -> 左Ctrl / Contrl -> Caps になるようにディップスイッチで設定する。
+- setup\SETUP.cmd を管理者権限で実行し、リソースを変更してキーマップを変更する。
+
 
     | FROM                | TO                    |
     | ------------------- | --------------------- |
-    | `~ (00_29)          | Escape (00_01)        |
-    | ¥ - (00_7D)         | `~ (00_29)            |
+    | ` ~ (00_29)         | Escape (00_01)        |
+    | ¥ - (00_7D)         | ` ~ (00_29)           |
     | Caps_Lock (00_3A)   | Left Ctrl (00_1D)     |
-    | Escape (00_01)      | `~ (00_29)            |
     | Left Ctrl (00_1D)   | Right Windows (E0_5C) |
     | かな (00_70)        | Right Alt (E0_38)     |
-    | (00_73)             | Left Shift (00_2A)    |
+    | \ _ (00_73)         | Left Shift (00_2A)    |
 
-- Windows の設定で[英語101]キーボードを選択
+- 設定の「システム」→「マルチタスク」で、ウインドウのスナップを「オン」にする。
+  （ウインドウ関連のショートカットキーが変わるため）
 
 ## マッピング
 
-- Ctrl キーとの同時押し (ctrl.ahk)
+### keymap.ahk
 
-      | FROM | TO        |
-      | ---- | --------- |
-      | h    | Backspace |
-      | m    | Enter     |
+- 単純なキーマップ
 
-- 変換+?: 矢印/PgUp/PgDn/Home/Endキーマッピング（henkan.ahk）
+    | FROM     | TO            |
+    | ---------|-------------- |
+    | Win + q  | Alt+F4        |
+    | Ctrl + h | Backspace     |
+    | Ctrl + m | Enter         |
+    | RAlt + m | WinMaximize   |
+    | RAlt + h | WinMinimize   |
+    | RAlt + j | AltTab        |
+    | RAlt + k | ShiftAltTab   |
+    | RAlt + ] | AltTab        |
+    | RAlt + [ | ShiftAltTab   |
 
-      | FROM          | TO            |
-      | ------------- | ------------- |
-      | h j k l       | 矢印キー      |
-      | 1 2 ... 0 - ^ | F1 F2 ... F10 |
-      | i o           | PgUp PgDn     |
-      | , .           | Home End      |
-      | n             | Insert        |
-      | m             | Delete        |
-      | u             | AppsKey       |
+### henkan.ahk 
 
-- アプリケーション切り替え (app.ahk + function.ahk）
+- 変換 キーと同時押し
 
-  変換+キーボードの左半分のキーでアプリケーションをフォーカスor起動
+    | FROM                   | TO            |
+    | ---------------------- | ------------- |
+    | HENKAN + h/j/k/l       | 矢印キー      |
+    | HENKAN + 1/2/.../0/-/^ | F1 F2 ... F10 |
+    | HENKAN + i/o           | PgUp PgDn     |
+    | HENKAN + ,/.           | Home End      |
+    | HENKAN + n             | Insert        |
+    | HENKAN + m             | Delete        |
+    | HENKAN + u             | AppsKey       |
 
-- RWin(リソースにより左下端キーに設定)+?: ウインドウコントロール （tile.ahk + function.ahk）
+### app.ahk
 
-      | KEY     | Window                    |
-      | ------- | ------------------------- |
-      | h j k l | 1/2-{左 下 上 右}         |
-      | SPC     | 中央 60%幅                |
-      | y       | 70%幅で左寄せ             |
-      | u       | 30%幅で右寄せ             |
-      | Y       | 30%幅で左寄せ             |
-      | U       | 70%幅で右寄せ             |
-      | m       | 最大化                    |
-      | i o , . | 1/4-{左上 右上 左下 右下} |
-      | ]       | 次のモニタへ              |
-      | [       | 前のモニタへ              |
+- アプリケーションの切り替え
 
-- window.ahk
+  変換+キーボードの左半分のキーでアプリケーションをフォーカス or 起動
 
-      | KEY      | Window        |
-      | -------- | ------------- |
-      | RAlt + m | WinMaximize   |
-      | RAlt + h | WinMinimize,A |
-      | RAlt + j | AltTab        |
-      | RAlt + k | ShiftAltTab   |
-      | RAlt + ] | AltTab        |
-      | RAlt + [ | ShiftAltTab   |
-      | Win + q  | Quit          |
+### tile.ahk + function.ahk
+
+- RWin(リソースにより左下端キー(Left Ctrl)に設定)
+
+    | KEY                  | TO                        |
+    | -------------------- | ------------------------- |
+    | RWin + h / j / k / l | 1/2 - 左 / 下 / 上 / 右   |
+    | RWin + SPC           | 中央 60%幅                |
+    | RWin + y             | 70%幅で左寄せ             |
+    | RWin + u             | 30%幅で右寄せ             |
+    | RWin + Y             | 30%幅で左寄せ             |
+    | RWin + U             | 70%幅で右寄せ             |
+    | RWin + m             | 最大化                    |
+    | RWin + i / o / , / . | 1/4 - 左上/右上/左下/右下 |
+    | RWin + ]             | 次のモニタへ              |
+    | RWin + [             | 前のモニタへ              |
