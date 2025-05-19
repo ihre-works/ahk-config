@@ -10,8 +10,8 @@
 ^m:: Send "{Enter}"
 ^h:: Send "{Backspace}"
 ^[:: {
-    Send "{Escape}"
     Send "{vk1D}"
+    Send "{Escape}"
 }
 
 ;; 拡大鏡ショートカットの無効化
@@ -30,6 +30,6 @@ RAlt & k:: ShiftAltTab
 RAlt & ]:: Send("+#{Right}")
 RAlt & [:: Send("+#{Left}")
 RAlt:: {
-    Send("{Escape}")
     Send "{vk1D}"       ; 無変換
+    Send("{Escape}")
 }
