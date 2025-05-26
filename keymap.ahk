@@ -22,7 +22,7 @@
 
 ;;;; 最大化/最小化
 RAlt & m:: WinMaximize
-RAlt & h:: WinMinimize
+RAlt & h:: WinMinimize "A"
 ;;;; アプリ切り替え
 RAlt & j:: AltTab
 RAlt & k:: ShiftAltTab
