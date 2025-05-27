@@ -26,8 +26,10 @@ SC079 & s::^#2 ; Teaminal
 SC079 & w::^#3 ; Web browser (edge)
 SC079 & g::^#4 ; Google Chrome
 SC079 & t::^#5 ; Teams
-SC079 & r::^#6 ; Outlook
-SC079 & v::^#7 ; ToDo
+SC079 & r::^#6 ; Mail
+SC079 & c::^#7 ; Outlook (Calendar)
+SC079 & v::^#8 ; ToDo
+SC079 & x::^#9 ; Excel
 SC079 & e:: appFocusOrRun("e")
 SC079 & d:: appFocusOrRun("d")
 SC079 & f:: appFocusOrRun("f")
