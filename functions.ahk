@@ -11,6 +11,22 @@ appFocusOrRun(code) {
     }
 }
 
+focusOrRun(program) {
+    if (pid := ProcessExist(program)) {
+        WinActivate("ahk_pid" pid)
+    } else {
+        Run(program)
+    }
+}
+
+focusOrRun2(processName, programName) {
+    if (pid := ProcessExist(processName)) {
+        WinActivate("ahk_pid" pid)
+    } else {
+        Run(programName)
+    }
+}
+
 ;;;;
 ;;;; Move and Resize Window
 ;;;;
