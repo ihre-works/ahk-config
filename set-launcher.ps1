@@ -87,7 +87,9 @@ foreach ($code in $codeList) {
     Write-Debug "p[0] = $($p[0])"
     Write-Debug "p[1] = $($p[1])"
     $key = "do-$($p[0])"
-    $app = "$(getApp $p[1]).app"
-    Copy-Item (Join-Path $KSRC $app) (Join-Path $KAPP $key)
-    Write-Host "Fn-$key -> $app"
+    $keyFile = Join-Path $KAPP $key
+    $appFile = Join-Path $KSRC "$(getApp $p[1]).app"
+    Get-Content $appFile | ForEach-Object { $_ -replace "{HOME}",$HOME } | Out-File $keyFile -Encoding utf8 -Force
+    Write-Host "Fn-$key -> $appFile"
+    Get-Content $keyFile | Write-Host
 }

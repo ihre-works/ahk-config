@@ -1,3 +1,3 @@
 SumatraPDF
-ahk_exe SumatraPDF.exe
-C:\Users\ihre\AppData\Local\SumatraPDF\SumatraPDF.exe
+ahk_class SUMATRA_PDF_FRAME
+"{HOME}\AppData\Local\SumatraPDF\SumatraPDF.exe"

@@ -1,3 +1,3 @@
 Code
 ahk_exe Code.exe
-code
+"{HOME}\AppData\Local\Programs\Microsoft VS Code\Code.exe"

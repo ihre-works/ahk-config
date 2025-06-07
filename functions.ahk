@@ -1,13 +1,24 @@
 ;;;;
 ;;;; Focus or Run the Application
 ;;;;
+; appFocusOrRun(code) {
+;     confFile := A_MyDocuments "\AutoHotkey\do-" code
+;     buf := StrSplit(FileRead(confFile), "!")
+;     if (pid := ProcessExist(buf[2])) {
+;         WinActivate("ahk_pid" pid)
+;     } else {
+;         Run(buf[3])
+;     }
+; }
+
 appFocusOrRun(code) {
     confFile := A_MyDocuments "\AutoHotkey\do-" code
-    buf := StrSplit(FileRead(confFile), "`n")
+    buf := StrSplit(FileRead(confFile), ["`n`r", "`n"])
+    MsgBox "Run[1]:" buf[1] "`n" "Run[2]:" buf[2] "`n" "Run[3]:" buf[3] "`n"
     if WinExist(buf[2]) {
-        WinActivate(buf[2])
+        WinActivate buf[2]
     } else {
-        Run(buf[3])
+        Run buf[3]
     }
 }
 

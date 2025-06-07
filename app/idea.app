@@ -1,3 +1,3 @@
 IDEA
-ahk_exe jetbrains_client64.exe
-C:\ProgramData\IDEA\bin\idea64.exe
+jetbrains_client64.exe
+"C:\Program Files\JetBrains\IntelliJ IDEA 2025\bin\idea64.exe"
