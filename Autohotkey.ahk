@@ -7,3 +7,4 @@
 #include tile.ahk
 #include henkan.ahk
 #include app.ahk
+#include explorer.ahk
