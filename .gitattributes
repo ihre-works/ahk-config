@@ -1,0 +1,4 @@
+*.reg   -text
+*.ahk   text eol=crlf
+*.app   text eol=crlf
+*.cmd   text eol=crlf
