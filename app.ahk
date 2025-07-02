@@ -28,6 +28,53 @@ SC079 & f:: appFocusOrRun("f")
 SC079 & x:: appFocusOrRun("x")
 SC079 & v:: appFocusOrRun("v")
 
+;;
+;; Focus or Run the Application
+;;
+appFocusOrRun(code) {
+    confFile := A_MyDocuments "\AutoHotkey\do-" code
+    if !FileExist(confFile) {
+        return
+    }
+    buf := StrSplit(FileRead(confFile), ["`n`r", "`n"])
+    query := Trim(buf[2], "`n`r")
+    cmd := Trim(buf[3], "`n`r")
+    if (InStr(query, "process") = 1) {
+        process := StrSplit(query, [" ", "`t"])[2]
+        pid := ProcessExist(process)
+        ; MsgBox "Check process: [" process "] pid: [" pid "]"
+        if (pid) {
+            WinActivate("ahk_pid " pid)
+        } else {
+            Run cmd
+        }
+    } else {
+        result := WinExist(query)
+        ; MsgBox "Check win: [" query "]
+        if (result) {
+            WinActivate query
+        } else {
+            Run cmd
+        }
+    }
+}
+
+focusOrSend(check, sendKey) {
+    if WinExist(check) {
+        WinActivate check
+    } else {
+        Send sendKey
+    }
+}
+
+focusOrRun(check, program) {
+    if WinExist(check) {
+        WinActivate check
+    } else {
+        Run(program)
+    }
+}
+
 ; # Win (Windows logo key).
 ; ! Alt
 ; ^ Control
