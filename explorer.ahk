@@ -22,7 +22,16 @@ FocusTreeView(arg)
 FocusFileList(arg)
 {
     hwnd := WinExist("ahk_class CabinetWClass")
-    ControlFocus("DirectUIHWND2", hwnd)
+    try {
+        ControlFocus("DirectUIHWND2", hwnd)
+    } catch {
+        ;
+    }
+    try {
+        ControlFocus("DirectUIHWND3", hwnd)
+    } catch {
+        ;
+    }
 }
 
 HotIfWinActive "ahk_class CabinetWClass"
