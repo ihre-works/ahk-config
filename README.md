@@ -15,7 +15,7 @@ AutoHotkey_UIA.exe を /uiAccess オプション付きで起動する。
 ## 設定方法(HHKB-JP)
 
 - (HHKB-JP) 左Fn -> 左Ctrl / Contrl -> Caps になるようにディップスイッチで設定する。
-- setup\SETUP.cmd を管理者権限で実行し、リソースを変更してキーマップを変更する。
+- setup\SETUP.cmd を管理者権限で実行し、リソースを変更して、キーボードレイアウトを「101/102キー」に設定し、キーマップを次のように変更する。
 
     | FROM      | (FROM_CODE) | TO                | (TO_CODE) |
     | --------- | ----------- | ----------------- | --------- |
@@ -27,27 +27,27 @@ AutoHotkey_UIA.exe を /uiAccess オプション付きで起動する。
     | \ _       | (00_73)     | Left Shift        | (00_2A)   |
     | 無変換    | (00_7B)     | Escape            | (00_01)   |
 
-- 設定（Win+I）を開き、「システム」→「マルチタスク」で、
+- 設定（Win+I）→「システム」→「マルチタスク」で、
   ウインドウのスナップを「オフ」にする。
   （ウインドウ関連のショートカットキーが変わるため）
 
-## マッピング
+## ファイル
 
 ### henkan.ahk
 
 - 変換キーと同時押し
 
-    | KEY                    | TO            |
-    | ---------------------- | ------------- |
-    | HENKAN + h/j/k/l       | 矢印キー      |
-    | HENKAN + 1/2/.../0/-/^ | F1 F2 ... F12 |
-    | HENKAN + i             | PgUp          |
-    | HENKAN + o             | PgDn          |
-    | HENKAN + ,             | Home          |
-    | HENKAN + .             | End           |
-    | HENKAN + n             | Insert        |
-    | HENKAN + m             | Delete        |
-    | HENKAN + u             | AppsKey       |
+    | KEY                  | TO            |
+    | -------------------- | ------------- |
+    | 変換 + h/j/k/l       | 矢印キー      |
+    | 変換 + 1/2/.../0/-/^ | F1 F2 ... F12 |
+    | 変換 + i             | PgUp          |
+    | 変換 + o             | PgDn          |
+    | 変換 + ,             | Home          |
+    | 変換 + .             | End           |
+    | 変換 + n             | Insert        |
+    | 変換 + m             | Delete        |
+    | 変換 + u             | AppsKey       |
 
 ### app.ahk
 
@@ -55,51 +55,40 @@ AutoHotkey_UIA.exe を /uiAccess オプション付きで起動する。
 - KEY2 が設定されているものは、タスクバーにピン留めする
 - オプションは、set-launcher.ps1 コマンドで変更しながら使う
 
-    | KEY          | KEY2  | アプリ           |
-    | ------------ | ----- | ---------------- |
-    | HENKAN + SPC | Win+1 | CoPilot          |
-    | HENKAN + a   | Win+2 | Explorer         |
-    | HENKAN + s   | Win+3 | Windows Terminal |
-    | HENKAN + w   | Win+4 | Microsoft Edge   |
-    | HENKAN + g   | Win+5 | Google Chrome    |
-    | HENKAN + t   | Win+6 | Teams            |
-    | HENKAN + r   | Win+7 | Thunderbirdt     |
-    | HENKAN + c   | Win+8 | Outlook          |
-    | HENKAN + z   | Win+9 | OneNote          |
-    | HENKAN + e   |       | オプション       |
-    | HENKAN + d   |       | オプション       |
-    | HENKAN + f   |       | オプション       |
-    | HENKAN + x   |       | オプション       |
-    | HENKAN + v   |       | オプション       |
+    | KEY        | KEY2  | アプリ           |
+    | ---------- | ----- | ---------------- |
+    | 変換 + SPC | Win+1 | CoPilot          |
+    | 変換 + a   | Win+2 | Explorer         |
+    | 変換 + s   | Win+3 | Windows Terminal |
+    | 変換 + w   | Win+4 | Microsoft Edge   |
+    | 変換 + g   | Win+5 | Google Chrome    |
+    | 変換 + t   | Win+6 | Teams            |
+    | 変換 + r   | Win+7 | Thunderbird      |
+    | 変換 + c   | Win+8 | Outlook          |
+    | 変換 + z   | Win+9 | OneNote          |
+    | 変換 + e   |       | オプション       |
+    | 変換 + d   |       | オプション       |
+    | 変換 + f   |       | オプション       |
+    | 変換 + x   |       | オプション       |
+    | 変換 + v   |       | オプション       |
 
-### tile.ahk + function.ahk
+### tile.ahk
 
-- HIRAKATA(リソースにより、左下端キー(Left Ctrl)に設定)
+- HIRAKATA（リソースにより、左下端キー(Left Ctrl)に設定）
 
-    | KEY                      | 機能                      |
-    | ------------------------ | ------------------------- |
-    | HIRAKATA + SPC           | 中央 60%幅                |
-    | HIRAKATA + Enter         | 最大化                    |
-    | HIRAKATA + Backspace     | 最小化（HIDE）            |
-    | HIRAKATA + h / j / k / l | 1/2 - 左 / 下 / 上 / 右   |
-    | HIRAKATA + y / u / n / m | 1/4 - 左上/右上/左下/右下 |
-    | HIRAKATA + i             | 30%幅で左寄せ             |
-    | HIRAKATA + o             | 70%幅で右寄せ             |
-    | HIRAKATA + ,             | 70%幅で左寄せ             |
-    | HIRAKATA + .             | 30%幅で右寄せ             |
-    | HIRAKATA + ]             | 次のモニタへ              |
-    | HIRAKATA + [             | 前のモニタへ              |
-
-### explorer.ahk
-
-- Explorer 用
-
-    | KEY                   | 機能                  |
-    | --------------------- | --------------------- |
-    | Ctrl + D              | TreeView にフォーカス |
-    | Ctrl + F              | MainView にフォーカス |
-    | Ctrl + 左 / Ctrl + 右 | タブ切り替え          |
-
+    | KEY                  | 機能                      |
+    | -------------------- | ------------------------- |
+    | HIRAKATA + SPC       | 中央 60%幅                |
+    | HIRAKATA + Enter     | 最大化                    |
+    | HIRAKATA + Backspace | 最小化（HIDE）            |
+    | HIRAKATA + h/j/k/l   | 1/2 - 左 / 下 / 上 / 右   |
+    | HIRAKATA + y/u/n/m   | 1/4 - 左上/右上/左下/右下 |
+    | HIRAKATA + i         | 30%幅で左寄せ             |
+    | HIRAKATA + o         | 70%幅で右寄せ             |
+    | HIRAKATA + ,         | 70%幅で左寄せ             |
+    | HIRAKATA + .         | 30%幅で右寄せ             |
+    | HIRAKATA + ]         | 次のモニタへ              |
+    | HIRAKATA + [         | 前のモニタへ              |
 
 ### misc.ahk
 
@@ -113,6 +102,16 @@ AutoHotkey_UIA.exe を /uiAccess オプション付きで起動する。
     | RAlt + j | AltTab      |
     | RAlt + k | ShiftAltTab |
 
+### explorer.ahk
+
+- Explorer 用
+
+    | KEY       | 機能                  |
+    | --------- | --------------------- |
+    | Alt + D   | TreeView にフォーカス |
+    | Alt + F   | MainView にフォーカス |
+    | Ctrl + 左 | 左のタブへ            |
+    | Ctrl + 右 | 右のタブへ            |
 
 ## メモ
 
