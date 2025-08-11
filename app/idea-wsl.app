@@ -1,3 +1,3 @@
 IDEA
-process idea64.exe
-"C:\Program Files\JetBrains\IntelliJ IDEA 2025\bin\idea64.exe"
+ahk_class SunAwtFrame
+"C:\ProgramData\IDEA\bin\idea64.exe"
