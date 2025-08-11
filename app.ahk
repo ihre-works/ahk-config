@@ -32,7 +32,7 @@ SC079 & v:: appFocusOrRun("v")
 ;; Focus or Run the Application
 ;;
 appFocusOrRun(code) {
-    confFile := A_MyDocuments "\AutoHotkey\do-" code
+    confFile := A_AppData "\AutoHotkey\do-" code
     if !FileExist(confFile) {
         return
     }

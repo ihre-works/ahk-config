@@ -19,8 +19,8 @@ param(
     [Parameter(ValueFromRemainingArguments = $true)]
     [string[]]$codeList
 )
-$KAPP = "$HOME\Documents\AutoHotkey"
-$KSRC = "$HOME\OneDrive\ahk-config\app"
+$KAPP = Join-Path $env:APPDATA "AutoHotkey"
+$KSRC = Join-Path $HOME "OneDrive" "ahk-config" "app"
 
 if ($codeList.Length -eq 0) {
     foreach ($i in @('e', 'd', 'f', 'x', 'v')) {
