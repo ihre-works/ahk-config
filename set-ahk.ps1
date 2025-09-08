@@ -22,6 +22,11 @@ param(
 $KAPP = Join-Path $env:APPDATA "AutoHotkey"
 $KSRC = Join-Path $HOME "OneDrive" "ahk-config" "app"
 
+
+if (-not (Test-Path $KAPP)) {
+    mkdir -p $KAPP
+}
+
 if ($codeList.Length -eq 0) {
     foreach ($i in @('e', 'd', 'f', 'x', 'v')) {
         $conf = Join-Path $KAPP "do-$i"
@@ -46,6 +51,7 @@ if ($codeList[0] -eq "-h") {
     Write-Host "  s ... SumatraPDF"
     Write-Host "  v ... VS Code"
     Write-Host "  w ... Word"
+    Write-Host "  x ... Excel"
     Write-Host ""
     return
 }
@@ -76,14 +82,13 @@ function getApp($code) {
         "w" {
             return "word"
         }
+        "x" {
+            return "excel"
+        }
         default {
             return $code
         }
     }
-}
-
-if (-not (Test-Path $KAPP)) {
-    mkdir -p $HOME/Documents/AutoHotkey
 }
 
 foreach ($code in $codeList) {
