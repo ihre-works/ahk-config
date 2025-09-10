@@ -37,6 +37,8 @@ SC079 & u::Send "{Blind}{AppsKey}"
 ; Ctrl+NumpadAdd は Exploer の幅調整で使う
 SC079 & p::Send "{Blind}{NumpadAdd}"
 
+SC079:: Send "{vk1C}"
+
 ;;;; 無変換キー
 SC07B:: {
     Send "{vk1D}"
