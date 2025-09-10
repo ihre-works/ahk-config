@@ -5,7 +5,7 @@
 ;;
 
 ;;;; Centering
-SC070 & Enter:: winTile("c", "a", 1, 1)
+SC070 & Enter:: winTile("r", "a", 0.96, 1)
 SC070 & Space:: winTile("c", "a", 0.6, 1)
 SC070 & Backspace:: WinMinimize "A"
 
