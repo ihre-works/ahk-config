@@ -1,7 +1,7 @@
 reg import %~dp0\KEYMAP.reg
 reg import %~dp0\KBD.reg
 
-copy %~dp0\AutoHotkey64_UIA.lnk "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup"
+.\MakeLink.ps1
 
 echo off
 
@@ -12,4 +12,4 @@ echo ##########################################
 pause
 
 rem logoff
-shutdown /g /t 0
+shutdown /g /t
