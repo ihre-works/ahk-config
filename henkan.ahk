@@ -37,13 +37,11 @@ SC079 & u::Send "{Blind}{AppsKey}"
 ; Ctrl+NumpadAdd は Exploer の幅調整で使う
 SC079 & p::Send "{Blind}{NumpadAdd}"
 
-SC079:: Send "{vk1C}"
-
 ;;;; 無変換キー
-SC07B:: {
-    Send "{vk1D}"
-    Send "{Escape}"
-}
+SC07B & j:: Send "{vk1C}"
+SC07B & l:: Send "{vk1D}"
+
+SC07B:: Send "{Escape}"
 
 ; # Win (Windows logo key).
 ; ! Alt
