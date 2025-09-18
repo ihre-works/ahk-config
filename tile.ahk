@@ -5,8 +5,8 @@
 ;;
 
 ;;;; Centering
-SC070 & Enter:: winTile("r", "a", 0.96, 1)
-SC070 & Space:: winTile("c", "a", 0.6, 1)
+SC070 & Enter:: winTile("a", "a", 1, 1)
+SC070 & Space:: winTile("l", "a", 0.6, 1)
 SC070 & Backspace:: WinMinimize "A"
 
 ;;;; 1/2
@@ -70,32 +70,36 @@ winTile(pW, pH, dW, dH) {
     MonitorGetWorkArea(MonitorNumber, &MonLeft, &MonTop, &MonRight, &MonBottom)
     activeWindowID := WinGetID("A")
 
-    x := MonLeft
-    y := MonTop
-    w := MonRight - MonLeft
-    h := MonBottom - MonTop
+    ; Get Monitor width and height
     mw := MonRight - MonLeft
     mh := MonBottom - MonTop
 
+    ; Get virtual monitor width and height, and position.
+    leftSideMargin := mw * (1.0 / 32.0)
+    vmw := mw - leftSideMargin
+    vmh := mh
+    VMonLeft  := MonLeft + leftSideMargin
+    VMonRight := MonRight
+
     ;; Get width and height of the window.
     if (pH == "t" || pH == "b" || pH == "c") {
-        h := mh * dH
+        h := vmh * dH
     } else {
-        h := mh
+        h := vmh
     }
     if (pW == "l" || pW == "r" || pW == "c") {
-        w := mw * dW
+        w := vmw * dW
     } else {
-        w := mw
+        w := vmw
     }
 
     ;; Get top-left position of the window.
     if (pW == "r") {
-        x := MonRight - w
+        x := VMonRight - w
     } else if (pW == "c") {
-        x := MonLeft + (mw - w) / 2
+        x := VMonLeft + (mw - w) / 2
     } else {
-        x := MonLeft
+        x := VMonLeft
     }
     if (pH == "b") {
         y := MonBottom - h
