@@ -5,21 +5,21 @@
 
 ExplorerNextTab(arg)
 {
-	Send "^{Tab}"
+    Send "^{Tab}"
 }
 
 ExplorerPrevTab(arg)
 {
-	Send "+^{Tab}"
+    Send "+^{Tab}"
 }
 
-FocusTreeView(arg)
+FocusTreeView()
 {
     hwnd := WinExist("ahk_class CabinetWClass")
     ControlFocus("SysTreeView321", hwnd)
 }
 
-FocusFileList(arg)
+FocusFileList()
 {
     hwnd := WinExist("ahk_class CabinetWClass")
     try {
@@ -34,9 +34,16 @@ FocusFileList(arg)
     }
 }
 
-HotIfWinActive "ahk_class CabinetWClass"
-Hotkey("^Left", ExplorerPrevTab)
-Hotkey("^Right", ExplorerNextTab)
-Hotkey("!D", FocusTreeView)
-Hotkey("!F", FocusFileList)
-HotIfWinActive
+#HotIf WinActive("ahk_class CabinetWClass") ; Explorer のウィンドウクラス
+
+^PgDn:: Send("^{Tab}")
+^PgUp:: Send("+^{Tab}")
+
+!D:: FocusTreeView()
+!F:: FocusFileList()
+
+; HotIfWinActive "ahk_class CabinetWClass"
+; Hotkey("^Left", ExplorerPrevTab)
+; Hotkey("^Right", ExplorerNextTab)
+
+#HotIf
