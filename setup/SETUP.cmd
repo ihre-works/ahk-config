@@ -1,7 +1,7 @@
 reg import %~dp0\KEYMAP.reg
 reg import %~dp0\KBD.reg
 
-.\MakeLink.ps1
+pwsh.exe .\MakeStartupLink.ps1
 
 echo off
 
