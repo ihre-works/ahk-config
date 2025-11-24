@@ -4,6 +4,8 @@
 ;; ひらがな・カタカナキー（SC070、左下 LCtrl キーを割当）と同時押し
 ;;
 
+SideMarginRate := 1.0 / 48.0
+
 ;;;; Centering
 SC070 & Enter:: winTile("a", "a", 1, 1)
 SC070 & Space:: winTile("c", "a", 0.7, 1)
@@ -75,7 +77,11 @@ winTile(pW, pH, dW, dH) {
     mh := MonBottom - MonTop
 
     ; Get virtual monitor width and height, and position.
-    leftSideMargin := mw * (1.0 / 32.0)
+    if (MonitorNumber == 1) {
+        leftSideMargin := mw * SideMarginRate
+    } else {
+        leftSideMargin := SideMarginRate
+    }
     vmw := mw - leftSideMargin
     vmh := mh
     VMonLeft  := MonLeft + leftSideMargin
