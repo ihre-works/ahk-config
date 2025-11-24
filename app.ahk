@@ -21,6 +21,8 @@ SC079 & r:: focusOrSend("ahk_exe thunderbird.exe", "^#7")
 SC079 & c:: focusOrSend("ahk_class 'Olk Host'", "^#8")
 ;; OneNote
 SC079 & z:: focusOrSend("ahk_exe ONENOTE.EXE", "^#9")
+;; Microsoft Todo
+SC079 & b:: ^#0
 ;; Option
 SC079 & e:: appFocusOrRun("e")
 SC079 & d:: appFocusOrRun("d")
