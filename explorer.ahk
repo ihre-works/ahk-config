@@ -3,12 +3,12 @@
 ;; Explorer 用ホットキー
 ;;
 
-ExplorerNextTab(arg)
+ExplorerNextTab()
 {
     Send "^{Tab}"
 }
 
-ExplorerPrevTab(arg)
+ExplorerPrevTab()
 {
     Send "+^{Tab}"
 }
@@ -34,10 +34,10 @@ FocusFileList()
     }
 }
 
-#HotIf WinActive("ahk_class CabinetWClass") ; Explorer のウィンドウクラス
+#HotIf WinActive("ahk_exe explorer.exe") ; Explorer のウィンドウクラス
 
-^PgDn:: Send("^{Tab}")
-^PgUp:: Send("+^{Tab}")
+^PgDn:: ExplorerNextTab()
+^PgUp:: ExplorerPrevTab()
 
 !D:: FocusTreeView()
 !F:: FocusFileList()

@@ -22,7 +22,6 @@ param(
 $KAPP = Join-Path $env:APPDATA "AutoHotkey"
 $KSRC = Join-Path $HOME "OneDrive" "ahk-config" "app"
 
-
 if (-not (Test-Path $KAPP)) {
     mkdir -p $KAPP
 }
