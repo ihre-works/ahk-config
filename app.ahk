@@ -22,8 +22,9 @@ SC079 & c:: focusOrSend("ahk_class 'Olk Host'", "^#8")
 ;; OneNote
 SC079 & z:: focusOrSend("ahk_exe ONENOTE.EXE", "^#9")
 ;; Microsoft Todo
-SC079 & b:: ^#0
+;SC079 & b:: ^#0
 ;; Option
+SC079 & b:: appFocusOrRun("b")
 SC079 & e:: appFocusOrRun("e")
 SC079 & d:: appFocusOrRun("d")
 SC079 & f:: appFocusOrRun("f")
@@ -47,6 +48,14 @@ appFocusOrRun(code) {
         ; MsgBox "Check process: [" process "] pid: [" pid "]"
         if (pid) {
             WinActivate("ahk_pid " pid)
+        } else {
+            Run cmd
+        }
+    } else if (InStr(query, "title ") = 1) {
+        title := SubStr(query, 6)
+        hwnd := WinExist(title)
+        if (hwnd) {
+            WinActivate(hwnd)
         } else {
             Run cmd
         }
