@@ -96,6 +96,9 @@ AutoHotkey_UIA.exe を /uiAccess オプション付きで起動する。
     | HIRAKATA + .         | 30%幅で右寄せ             |
     | HIRAKATA + ]         | 次のモニタへ              |
     | HIRAKATA + [         | 前のモニタへ              |
+    | HIRAKATA + →         | 右のワークスペースへ      |
+    | HIRAKATA + ←         | 左のワークスペースへ      |
+    | HIRAKATA + ↑         | ワークスペース一覧        |
 
 ### misc.ahk
 
