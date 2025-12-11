@@ -41,6 +41,7 @@ SC070 & ]::+#Right
 ;;;; ワークスペース移動
 SC070 & Left:: ^#Left
 SC070 & Right:: ^#Right
+SC070 & Up:: #Tab
 
 ;;
 ;; Move and Resize Window
