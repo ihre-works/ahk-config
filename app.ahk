@@ -15,21 +15,16 @@ SC079 & w:: focusOrSend("ahk_exe msedge.exe", "^#4")
 SC079 & g:: focusOrSend("ahk_exe chrome.exe", "^#5")
 ;; Teams
 SC079 & t:: focusOrSend("ahk_class TeamsWebView", "^#6")
-;; Thunderbird
-SC079 & r:: focusOrSend("ahk_exe thunderbird.exe", "^#7")
-;; Outlook
-SC079 & c:: focusOrSend("ahk_class 'Olk Host'", "^#8")
-;; OneNote
-SC079 & z:: focusOrSend("ahk_exe ONENOTE.EXE", "^#9")
-;; Microsoft Todo
-;SC079 & b:: ^#0
 ;; Option
-SC079 & b:: appFocusOrRun("b")
 SC079 & e:: appFocusOrRun("e")
+SC079 & r:: appFocusOrRun("r")
 SC079 & d:: appFocusOrRun("d")
 SC079 & f:: appFocusOrRun("f")
+SC079 & z:: appFocusOrRun("z")
 SC079 & x:: appFocusOrRun("x")
+SC079 & c:: appFocusOrRun("c")
 SC079 & v:: appFocusOrRun("v")
+SC079 & b:: appFocusOrRun("b")
 
 ;;
 ;; Focus or Run the Application
