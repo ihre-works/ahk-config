@@ -27,7 +27,7 @@ if (-not (Test-Path $KAPP)) {
 }
 
 if ($codeList.Length -eq 0) {
-    foreach ($i in @('e', 'd', 'f', 'x', 'v')) {
+    foreach ($i in @('e', 'r', 'd', 'f', 'z', 'x', 'c', 'v')) {
         $conf = Join-Path $KAPP "do-$i"
         if (Test-Path $conf) {
             $v = (Get-Content $conf)[0]
