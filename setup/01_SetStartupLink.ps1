@@ -11,3 +11,9 @@ $shortcut.WindowStyle = 1  # 通常のウィンドウ
 $shortcut.Description = "AutoHotkey_uiAccess"
 $shortcut.IconLocation = "$targetPath,0"
 $shortcut.Save()
+
+& $HOME\OneDrive\ahk-config\set-ahk.ps1 d=sumatrapdf
+& $HOME\OneDrive\ahk-config\set-ahk.ps1 z=onenote
+& $HOME\OneDrive\ahk-config\set-ahk.ps1 x=excel
+& $HOME\OneDrive\ahk-config\set-ahk.ps1 c=outlook
+& $HOME\OneDrive\ahk-config\set-ahk.ps1 v=code
