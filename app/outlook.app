@@ -1,3 +1,3 @@
 Outlook
-ahk_class olk.exe
+ahk_exe olk.exe
 {HOME}\AppData\Local\Microsoft\WindowsApps\olk.exe

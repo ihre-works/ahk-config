@@ -1,3 +1,3 @@
 Teams
-process ms-teams.exe
+ahk_class TeamsWebView
 msteams:
