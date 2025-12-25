@@ -34,8 +34,6 @@ AutoHotkey_UIA.exe を /uiAccess オプション付きで起動する。
 
 ### henkan.ahk
 
-- 変換キーと同時押し
-
     | KEY                  | TO            |
     | -------------------- | ------------- |
     | 変換 + h/j/k/l       | 矢印キー      |
@@ -47,20 +45,15 @@ AutoHotkey_UIA.exe を /uiAccess オプション付きで起動する。
     | 変換 + n             | Insert        |
     | 変換 + m             | Delete        |
     | 変換 + u             | AppsKey       |
-
-- 無変換キーと同時押し
-
-    | KEY        | TO       |
-    | ---------- | -------- |
-    | 無変換 + j | Ctrl + j |
-    | 無変換 + l | Ctrl + l |
-    | 無変換     | Escape   |
+    | 無変換 + j           | Ctrl + j      |
+    | 無変換 + l           | Ctrl + l      |
+    | 無変換               | Escape        |
 
 ### app.ahk
 
 - アプリケーション切り替え、もしくは、起動
-- KEY2 が設定されているものは、タスクバーにピン留めする
-- オプションは、set-launcher.ps1 コマンドで変更しながら使う
+- KEY2 が設定されているものは、タスクバーにこの順でピン留めする
+- オプションは、ahk.ps1 コマンドで変更しながら使う
 
     | KEY        | KEY2  | アプリ           |
     | ---------- | ----- | ---------------- |
@@ -69,14 +62,14 @@ AutoHotkey_UIA.exe を /uiAccess オプション付きで起動する。
     | 変換 + s   | Win+3 | Windows Terminal |
     | 変換 + w   | Win+4 | Microsoft Edge   |
     | 変換 + g   | Win+5 | Google Chrome    |
-    | 変換 + t   | Win+6 | Teams            |
-    | 変換 + r   | Win+7 | Thunderbird      |
-    | 変換 + c   | Win+8 | Outlook          |
-    | 変換 + z   | Win+9 | OneNote          |
     | 変換 + e   |       | オプション       |
+    | 変換 + r   |       | オプション       |
+    | 変換 + t   |       | オプション       |
     | 変換 + d   |       | オプション       |
     | 変換 + f   |       | オプション       |
+    | 変換 + z   |       | オプション       |
     | 変換 + x   |       | オプション       |
+    | 変換 + c   |       | オプション       |
     | 変換 + v   |       | オプション       |
 
 ### tile.ahk
