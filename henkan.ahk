@@ -38,10 +38,20 @@ SC079 & u::Send "{Blind}{AppsKey}"
 SC079 & p::Send "{Blind}{NumpadAdd}"
 
 ;;;; 無変換キー
-SC07B & j:: Send "{vk1C}"
-SC07B & l:: Send "{vk1D}"
+; SC07B & j:: Send "{vk1C}"
+; SC07B & l:: Send "{vk1D}"
 
-SC07B:: Send "{Escape}"
+^j:: Send "{vk1C}"
+^l:: Send "{vk1D}"
+
+SC07B & j:: Send "{Blind}^j"
+SC07B & l:: Send "{Blind}^l"
+
+SC07B:: {
+Send "{vk1D}"
+Send "{Escape}"
+Return
+}
 
 ; # Win (Windows logo key).
 ; ! Alt

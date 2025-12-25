@@ -50,11 +50,11 @@ AutoHotkey_UIA.exe を /uiAccess オプション付きで起動する。
 
 - 無変換キーと同時押し
 
-    | KEY        | TO     |
-    | ---------- | ------ |
-    | 無変換 + j | 変換   |
-    | 無変換 + l | 無変換 |
-    | 無変換     | Escape |
+    | KEY        | TO       |
+    | ---------- | -------- |
+    | 無変換 + j | Ctrl + j |
+    | 無変換 + l | Ctrl + l |
+    | 無変換     | Escape   |
 
 ### app.ahk
 
@@ -111,6 +111,8 @@ AutoHotkey_UIA.exe を /uiAccess オプション付きで起動する。
     | Ctrl + h | Backspace   |
     | RAlt + j | AltTab      |
     | RAlt + k | ShiftAltTab |
+    | Ctrl + j | 変換        |
+    | Ctrl + l | 無変換      |
 
 ### explorer.ahk
 
