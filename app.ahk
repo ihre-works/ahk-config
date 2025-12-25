@@ -14,8 +14,9 @@ SC079 & w:: focusOrSend("ahk_exe msedge.exe", "^#4")
 ;; Google Chrome
 SC079 & g:: focusOrSend("ahk_exe chrome.exe", "^#5")
 ;; Teams
-SC079 & t:: focusOrSend("ahk_class TeamsWebView", "^#6")
+;;SC079 & t:: focusOrSend("ahk_class TeamsWebView", "^#6")
 ;; Option
+SC079 & t:: appFocusOrRun("t")
 SC079 & e:: appFocusOrRun("e")
 SC079 & r:: appFocusOrRun("r")
 SC079 & d:: appFocusOrRun("d")
