@@ -4,12 +4,13 @@
 ;; ひらがな・カタカナキー（SC070、左下 LCtrl キーを割当）と同時押し
 ;;
 
-SideMarginRate := 1.0 / 48.0
+LeftMarginRate := 1.0 / 64.0
+RightMarginRate := 1.0 / 64.0
 CurMonitor := -9999
 
 ;;;; Centering
 SC070 & Enter:: winTile(CurMonitor, "a", "a", 1, 1)
-SC070 & Space:: winTile(CurMonitor, "c", "a", 0.7, 1)
+SC070 & Space:: winTile(CurMonitor, "c", "a", 0.8, 1)
 SC070 & Backspace:: WinMinimize "A"
 SC070 & 1:: winTile(1, "a", "a", 1, 1)
 SC070 & 2:: winTile(2, "c", "a", 1, 1)
@@ -59,13 +60,13 @@ winTile(mid, pW, pH, dW, dH) {
     if (!WinExist("A")) {
         return
     }
-    MonitorNumber := mid
+    monitorNumber := mid
     if (mid == CurMonitor) {
         WinGetPos(&x, &y, &w, &h, "A")
         center_x := x + w / 2
         center_y := y + h / 2
-        MonitorCount := MonitorGetCount()
-        loop MonitorCount {
+        monitorCount := MonitorGetCount()
+        loop monitorCount {
             ; MonitorGet A_Index, &L, &T, &R, &B
             MonitorGetWorkArea A_Index, &WL, &WT, &WR, &WB
             ;; MsgBox("IDX=" A_Index ", WL=" WL ", WT=" WT ", WR=" WR ", WB=" WB ", x=" x ", y=" y ", w=" w ", h=" h)
@@ -75,23 +76,25 @@ winTile(mid, pW, pH, dW, dH) {
         }
     }
 
-    MonitorGetWorkArea(MonitorNumber, &MonLeft, &MonTop, &MonRight, &MonBottom)
+    MonitorGetWorkArea(monitorNumber, &monLeft, &monTop, &monRight, &monBottom)
     activeWindowID := WinGetID("A")
 
     ; Get Monitor width and height
-    mw := MonRight - MonLeft
-    mh := MonBottom - MonTop
+    mw := monRight - monLeft
+    mh := monBottom - monTop
 
     ; Get virtual monitor width and height, and position.
-    if (MonitorNumber == 1) {
-        leftSideMargin := mw * SideMarginRate
+    if (monitorNumber == 1) {
+        leftMargin := mw * LeftMarginRate
+        rightMargin := mw * RightMarginRate
     } else {
-        leftSideMargin := SideMarginRate
+        leftMargin := 0
+        rightMargin := 0
     }
-    vmw := mw - leftSideMargin
+    vmw := mw - leftMargin - rightMargin
     vmh := mh
-    VMonLeft  := MonLeft + leftSideMargin
-    VMonRight := MonRight
+    vmLeft  := monLeft + leftMargin
+    vmRight := monRight - rightMargin
 
     ;; Get width and height of the window.
     if (pH == "t" || pH == "b" || pH == "c") {
@@ -107,18 +110,18 @@ winTile(mid, pW, pH, dW, dH) {
 
     ;; Get top-left position of the window.
     if (pW == "r") {
-        x := VMonRight - w
+        x := vmRight - w
     } else if (pW == "c") {
-        x := VMonLeft + (mw - w) / 2
+        x := vmLeft + (vmw - w) / 2
     } else {
-        x := VMonLeft
+        x := vmLeft
     }
     if (pH == "b") {
-        y := MonBottom - h
+        y := monBottom - h
     } else if (pH == "c") {
-        y := MonTop + (mh - h) / 2
+        y := monTop + (mh - h) / 2
     } else {
-        y := MonTop
+        y := monTop
     }
 
     WinMove(x, y, w, h, "ahk_id" activeWindowID)
